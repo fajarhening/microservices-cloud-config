@@ -3,14 +3,14 @@ spring:
   gateway:
    routes: 
     id: code-service
-    uri: lb:code-service
+    uri: lb://CODE-SERVICE
     predicates:
      -Path = /api/code/**
     id: product-service
-    uri: lb:product-service
+    uri: lb://PRODUCT-SERVICE
     predicates:
      -Path = /api/products/**
     id: sales-service
-    uri: lb:sales-service
+    uri: lb://SALES-SERVICE
     predicates:
      -Path = /api/sales/**

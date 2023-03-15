@@ -2,16 +2,15 @@ spring:
  cloud:
   gateway:
    routes: 
-    - id: CODE-SERVICE
+    - id: codeService
       uri: lb://CODE-SERVICE
       predicates:
-       -Path = /api/code/**
+      - Path=/api/code/**
     - id: PRODUCT-SERVICE
       uri: lb://PRODUCT-SERVICE
       predicates:
-       -Path = /api/products/**
+      - Path=/api/products/**
     - id: SALES=SERVICE
       uri: lb://SALES-SERVICE
       predicates:
-       -Path = /api/sales/**   
- 
+      - Path=/api/sales/**   

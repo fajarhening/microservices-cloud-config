@@ -1,0 +1,16 @@
+spring:
+ cloud:
+  gateway:
+   routes: 
+    id: code-service
+    uri: lb:code-service
+    predicates:
+     -Path = /api/code/**
+    id: product-service
+    uri: lb:product-service
+    predicates:
+     -Path = /api/products/**
+    id: sales-service
+    uri: lb:sales-service
+    predicates:
+     -Path = /api/sales/**

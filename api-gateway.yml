@@ -1,16 +1,19 @@
 spring:
  cloud:
   gateway:
+   discovery:
+    locator:
+     enabled: true
    routes: 
-    - id: codeService
-      uri: lb://CODE-SERVICE
+    - id: code-dtl-service
+      uri: lb://CODE-DTL-SERVICE
       predicates:
-      - Path=/api/code/**
-    - id: PRODUCT-SERVICE
-      uri: lb://PRODUCT-SERVICE
+      - Path=/api/code-dtl/**
+    - id: locs-service
+      uri: lb://LOCS-SERVICE
       predicates:
-      - Path=/api/products/**
-    - id: SALES=SERVICE
-      uri: lb://SALES-SERVICE
+      - Path=/api/locs/**
+    - id: sups-service
+      uri: lb://SUPS-SERVICE
       predicates:
-      - Path=/api/sales/**   
+      - Path=/api/sups/**    
